@@ -10,12 +10,12 @@ from django.db import models
 
 class Photo(models.Model):
     # 필드명 = 필드타입 ( 조건 .....)
-    # pk ( 창고에서 기본적으로 생성 )
+    # pk ( 창고에서 기본적으로 생성 - 단순 숫자 증가 )
     title = models.CharField(max_length=50)
-    autuor = models.CharField(max_length=50)
+    author = models.CharField(max_length=50)
     image = models.CharField(max_length=100)
     description = models.TextField()
     price = models.IntegerField()
 
     def __str__(self) -> str:
-        return self.title + " " + self.autuor
+        return self.title + " " + self.author

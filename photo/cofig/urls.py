@@ -22,6 +22,7 @@ urlpatterns = [
     
     #http://127.0.0.1:8000/
     path('', views.home, name="home"),
+    
     #photo 앱의 urls.py 파일을 포함
     path("photo/", include('photo.urls')),
 ]
