@@ -10,6 +10,7 @@
   </style>
 {% endblock style %}
 {% block content %}
+
   <div class="row pb-3">
     <div class="col">
       <h1>Photo List</h1>
@@ -20,7 +21,7 @@
   </div>
   {% if photos %}
     {% for photo in photos %}
-      <div class="row photo">
+      <div class="row photo my-3">
         <div class="col">
           <h2>
             <a href="{% url 'photo_detail' pk=photo.pk %}">
@@ -28,11 +29,12 @@
             </a>
           </h2>
         </div>
-        <div class="col"><img src="{{photo.image}} " alt="{{photo.title}} "></div>
+        <div class="col"><img src="{{photo.image}}" alt="{{photo.title}}"></div>
         <div class="col">
           <p>
             {{photo.author}},
-            {{photo.price}},
+            {{photo.price}}
+            원
           </p>
         </div>
       </div>

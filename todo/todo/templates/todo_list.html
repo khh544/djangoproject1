@@ -10,7 +10,7 @@
       </a>
     </div>
     <div class="col-auto">
-      <a href="{% url 'done_list' %}" class="btn btn-primary">
+      <a href=" {% url 'done_list' %} " class="btn btn-primary">
         완료한 Todo 목록
       </a>
     </div>
@@ -20,7 +20,7 @@
       {% for todo in todos %}
         <tr>
           <th class="align-middle">
-            <a href="{% url 'todo_detail' pk=todo.pk %}">
+            <a href=" {% url 'todo_detail' pk=todo.pk %} ">
               {{todo.title}}
             </a>
             {% if todo.important %}
@@ -28,7 +28,7 @@
             {% endif %}
           </th>
           <td class="text-right">
-            <a href="{% url 'todo_done' pk=todo.pk%} " class="btn btn-danger">완료</a>
+            <a href="{% url 'todo_done' pk=todo.pk%}" class="btn btn-danger">완료</a>
             <a href="{% url 'todo_edit' pk=todo.pk%}" class="btn btn-outline-primary">수정</a>
           </td>
         </tr>

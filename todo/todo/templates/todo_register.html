@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-  <div class="row mb=3">
-    <h1>ToDo 후기</h1>
+  <div class="row mb-3">
+    <h1>ToDo 추가</h1>
   </div>
   <div class="row">
     <div class="col-md-12">
@@ -14,8 +14,8 @@
             {% csrf_token %}
             <!-- {{form.as_p}} -->
             <div class="form-group">
-              <label for="title">title</label>
-              <input type="text" name="title" placeholder="제목입력" class="form-control">
+              <label for="title">Title</label>
+              <input type="text" name="title" placeholder="제목 입력" class="form-control">
             </div>
             <div class="form-group">
               <label for="description">Description</label>

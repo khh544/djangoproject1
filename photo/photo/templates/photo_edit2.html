@@ -1,20 +1,21 @@
 {% extends 'base.html' %}
-{% block title %}사진 상세 보기{% endblock title %}
+{% block title %}사진수정{% endblock title %}
 {% block content %}
+
   <div class="row">
     <div class="col">
       <a href="{% url 'photo_list' %}" class="btn btn-info">List</a>
     </div>
   </div>
   <div class="row pt-4">
-    <h2>사진 수정</h2>
+    <h2>사진수정</h2>
   </div>
 
   <!--사진 수정 폼 -->
   <div class="row pt-4">
     <div class="col-8 mx-auto">
       <form method="post">
-        <!--post 방식은 무족건 csrf token 넣어야함-->
+        <!-- post 방식의 폼은 반드시 csrf token 값을 포함해야 함-->
         {% csrf_token %}
         <!--title-->
         <div class="form-group row">

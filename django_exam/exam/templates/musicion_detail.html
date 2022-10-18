@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block style %}
+  <style>
+    .errorlist {
+      list-style-type: none;
+      font-size: 0.8em;
+      color: red;
+    }
+
+    .errorlist li {
+      text-indent: -40px;
+    }
+  </style>
+{% endblock style %}
+{% block content %}
+  <form method="post" action="{% url 'musicion_list' %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="test" name="first_name" id="first_name" class="form-control" value="{{musicion.first_name}}" readonly="readonly">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input type="test" name="last_name" id="last_name" class="form-control" value="{{musicion.last_name}}" readonly="readonly">
+    </div>
+    <div class="form-group">
+      <label for="instrument">Instrument</label>
+      <input type="test" name="instrument" id="instrument" class="form-control" value="{{musicion.instrument}}" readonly="readonly">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">리스트</button>
+    </div>
+  </form>
+{% endblock content %}

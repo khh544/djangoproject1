@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import json
 import os
-import secrets
 from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-secrets_files = os.path.join(BASE_DIR, 'secrets.json')
-with open(secrets_files) as f:
-    secrets_files = json.loads(f.read())
+# SECURITY 
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
+with open(secret_file) as f:
+    secrets = json.loads(f.read())
 
-def get_secret (setting, secrets=secrets):
+def get_secret(setting, secrets=secrets):
     try:
         return secrets[setting]
     except KeyError:
